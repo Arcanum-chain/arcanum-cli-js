@@ -1,0 +1,28 @@
+{
+  "name": "arc-cli",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "pnpm run build && nodemon src/index.ts",
+    "build": "rm -rf dist && npx tsc --build",
+    "prod": "pnpm run build && sudo rm -rf /Users/kirill/.npm/_npx/a04447a16e9ebda0/node_modules/.bin/arcanum && sudo npx arcanum"
+  },
+  "bin": {
+    "arcanum": "dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "figlet": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8",
+    "@types/node": "^22.7.4",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
