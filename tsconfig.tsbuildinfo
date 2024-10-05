@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/commands/cmd.enum.ts","./src/commands/index.ts","./src/constants/index.ts","./src/controller/controller.ts","./src/service/index.ts","./src/service/install/install.service.ts","./src/types/index.ts"],"version":"5.6.2"}
+{"root":["./src/index.ts","./src/commands/cmd.enum.ts","./src/commands/index.ts","./src/constants/index.ts","./src/controller/controller.ts","./src/service/index.ts","./src/service/install/install.service.ts","./src/service/start/start.service.ts","./src/types/index.ts"],"version":"5.6.2"}

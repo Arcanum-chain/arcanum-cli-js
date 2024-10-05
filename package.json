@@ -5,10 +5,27 @@
   "scripts": {
     "start": "pnpm run build && nodemon src/index.ts",
     "build": "rm -rf dist && npx tsc --build",
-    "prod": "pnpm run build && sudo rm -rf /Users/kirill/.npm/_npx/a04447a16e9ebda0/node_modules/.bin/arcanum && sudo npx arcanum"
+    "prod": "pnpm run build && sudo rm -rf /Users/kirill/.npm/_npx/a04447a16e9ebda0/node_modules/.bin/arcanum && sudo npx arcanum",
+    "pkg:build": "rm -rf target && pkg ."
   },
   "bin": {
     "arcanum": "dist/index.js"
+  },
+  "pkg": {
+    "scripts": "build/**/*.js",
+    "assets": [
+      "views/**/*",
+      "node_modules/.pnpm/figlet@1.7.0/node_modules/figlet/fonts/Standard.flf",
+      "node_modules/.pnpm/**/*"
+    ],
+    "targets": [
+      "node16-macos-arm64",
+      "node16-linux-arm64",
+      "node16-win-x64",
+      "node16-macos-x64",
+      "node16-linux-x64"
+    ],
+    "outputPath": "target"
   },
   "keywords": [],
   "author": "",

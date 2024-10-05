@@ -1,9 +1,7 @@
 import { CmdKeys } from "../commands/cmd.enum";
 import { AvailableLanguages } from "../constants";
 
-import { InstallService } from "../service";
-
-import type { OptType } from "../types";
+import { InstallService, StartService } from "../service";
 
 export class Controller {
   public control(cmd: string, opt?: Record<string, any>) {
@@ -20,8 +18,8 @@ export class Controller {
           return new InstallService().installPackage(
             opt?.["lang"] ?? AvailableLanguages.JS
           );
-
-          break;
+        case CmdKeys.START:
+          return new StartService().start(opt?.["name"]);
       }
 
       console.log(cmd, opt);

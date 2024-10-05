@@ -18,4 +18,18 @@ export const Commands = {
       controller.control(Commands.install.key, opt);
     },
   },
+  start: {
+    key: CmdKeys.START,
+    options: [
+      {
+        key: "--name <char>",
+        desc: "Sets the pm2 name",
+        defaultValue: "arcanum_node",
+      },
+    ],
+    description: "Start arcanum node",
+    action: function (opt?: any) {
+      controller.control(Commands.start.key, opt);
+    },
+  },
 };
