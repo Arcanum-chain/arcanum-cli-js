@@ -1,7 +1,7 @@
 import { CmdKeys } from "../commands/cmd.enum";
 import { AvailableLanguages } from "../constants";
 
-import { InstallService, StartService } from "../service";
+import { InstallService, StartService, MonitService } from "../service";
 
 export class Controller {
   public control(cmd: string, opt?: Record<string, any>) {
@@ -20,9 +20,13 @@ export class Controller {
           );
         case CmdKeys.START:
           return new StartService().start(opt?.["name"]);
+        case CmdKeys.RESTART:
+          return new StartService().restart(opt?.["name"]);
+        case CmdKeys.DELETE:
+          return new StartService().delete(opt?.["name"]);
+        case CmdKeys.LOGS:
+          return new MonitService().getLogs(opt?.["pm2"]);
       }
-
-      console.log(cmd, opt);
     } catch (e) {
       throw e;
     }

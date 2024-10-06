@@ -32,4 +32,46 @@ export const Commands = {
       controller.control(Commands.start.key, opt);
     },
   },
+  restart: {
+    key: CmdKeys.RESTART,
+    options: [
+      {
+        key: "--name <char>",
+        desc: "Sets the pm2 name",
+        defaultValue: "arcanum_node",
+      },
+    ],
+    description: "Restart arcanum node",
+    action: function (opt?: any) {
+      controller.control(Commands.restart.key, opt);
+    },
+  },
+  delete: {
+    key: CmdKeys.DELETE,
+    options: [
+      {
+        key: "--name <char>",
+        desc: "Delete the pm2 process",
+        defaultValue: "arcanum_node",
+      },
+    ],
+    description: "Delete arcanum node",
+    action: function (opt?: any) {
+      controller.control(Commands.delete.key, opt);
+    },
+  },
+  logs: {
+    key: CmdKeys.LOGS,
+    options: [
+      {
+        key: "--pm2",
+        desc: "Is pm2 logs?",
+        defaultValue: "",
+      },
+    ],
+    description: "Get arcanum node logs",
+    action: function (opt?: any) {
+      controller.control(Commands.logs.key, opt);
+    },
+  },
 };
